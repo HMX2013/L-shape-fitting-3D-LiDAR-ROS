@@ -1,0 +1,9 @@
+<launch>
+
+  <node pkg="l_shape_fitting" type="l_shape_fitting" name="L_shape_fitting" output="screen"/>
+
+  <rosparam file="$(find l_shape_fitting)/config/params_lshape.yaml" command="load" /> 
+
+  <!-- Rviz -->
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find l_shape_fitting)/rviz/L_shape_fitting.rviz" output="log" respawn="false" />
+</launch>
